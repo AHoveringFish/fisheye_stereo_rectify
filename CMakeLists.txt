@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8.11)
+project(CALIB_CAM)
+
+set(OpenCV_DIR /usr/local/OpenCV3)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package(OpenCV REQUIRED)
+include_directories($(OpenCV_INCLUDE_DIRS))
+add_executable(fisheye_rectify fisheye_rectify.cpp)
+target_link_libraries(fisheye_rectify ${OpenCV_LIBS} )
